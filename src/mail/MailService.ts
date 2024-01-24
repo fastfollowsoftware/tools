@@ -1,12 +1,12 @@
 import { BaseConfig, MailgunConfig, SmtpConfig } from './Config';
 import { MailSendOptions } from './MailSendOptions';
-import MailgunMailer from './MailgunMailer';
-import SmtpMailer from './SmtpMailer';
+import { MailgunMailer } from './MailgunMailer';
+import { SmtpMailer } from './SmtpMailer';
 
 type MailerConfig = BaseConfig &
   (({ mailer: 'mailgun' } & MailgunConfig) | ({ mailer: 'smtp' } & SmtpConfig));
 
-export default class MailService {
+export class MailService {
   private config: MailerConfig;
   private mailer;
 

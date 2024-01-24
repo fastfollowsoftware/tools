@@ -1,10 +1,10 @@
 import { MailgunConfig } from './Config';
 import { MailSendOptions } from './MailSendOptions';
-import MailerInterface from './Mailer.interface';
 import FormData from 'form-data';
 import Mailgun from 'mailgun.js';
+import { MailerInterface } from './Mailer.interface';
 
-export default class MailgunMailer implements MailerInterface {
+export class MailgunMailer implements MailerInterface {
   private config: MailgunConfig;
   private mailgun;
 

@@ -1,9 +1,9 @@
 import { SmtpConfig } from './Config';
 import { MailSendOptions } from './MailSendOptions';
-import MailerInterface from './Mailer.interface';
 import nodemailer from 'nodemailer';
+import { MailerInterface } from './Mailer.interface';
 
-export default class SmtpMailer implements MailerInterface {
+export class SmtpMailer implements MailerInterface {
   private mailer;
 
   constructor(config: SmtpConfig) {
