@@ -15,3 +15,6 @@ export type SmtpConfig = {
   password: string;
   tls: boolean;
 };
+
+export type MailerConfig = BaseConfig &
+  (({ mailer: 'mailgun' } & MailgunConfig) | ({ mailer: 'smtp' } & SmtpConfig));

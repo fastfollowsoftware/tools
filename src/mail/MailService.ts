@@ -1,10 +1,7 @@
-import { BaseConfig, MailgunConfig, SmtpConfig } from './Config';
+import { MailerConfig } from './Config';
 import { MailSendOptions } from './MailSendOptions';
 import { MailgunMailer } from './MailgunMailer';
 import { SmtpMailer } from './SmtpMailer';
-
-type MailerConfig = BaseConfig &
-  (({ mailer: 'mailgun' } & MailgunConfig) | ({ mailer: 'smtp' } & SmtpConfig));
 
 export class MailService {
   private config: MailerConfig;
