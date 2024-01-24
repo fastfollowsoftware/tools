@@ -40,7 +40,6 @@ export default class MailService {
 
   mergeOptions(options: MailSendOptions) {
     return {
-      // TODO: Update from address
       from: this.config.from,
       ...options,
     };
