@@ -1,0 +1,30 @@
+{
+  "name": "@fastfollowsoftware/tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastfollowsoftware/tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fastfollowsoftware/tools/issues"
+  },
+  "homepage": "https://github.com/fastfollowsoftware/tools#readme",
+  "dependencies": {
+    "mailgun.js": "^10.0.0",
+    "nodemailer": "^6.9.8",
+    "typescript": "^5.3.3"
+  },
+  "prepublishOnly": "tsc",
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.14"
+  }
+}
