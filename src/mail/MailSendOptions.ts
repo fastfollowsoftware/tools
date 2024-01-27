@@ -3,4 +3,5 @@ export type MailSendOptions = {
   to: string | string[];
   subject: string;
   html: string;
+  bcc?: string | string[];
 };
