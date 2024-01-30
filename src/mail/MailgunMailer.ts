@@ -19,6 +19,16 @@ export class MailgunMailer implements MailerInterface {
   }
 
   async send(options: MailSendOptions) {
-    return await this.mailgun.messages.create(this.config.domain, options);
+    return await this.mailgun.messages.create(this.config.domain, {
+      from: options.from,
+      to: options.to,
+      subject: options.subject,
+      html: options.html,
+      bcc: options.bcc,
+      attachment: options.attachments?.map((attachment) => ({
+        data: attachment.content,
+        filename: attachment.filename,
+      })),
+    });
   }
 }

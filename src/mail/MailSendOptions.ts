@@ -4,4 +4,8 @@ export type MailSendOptions = {
   subject: string;
   html: string;
   bcc?: string | string[];
+  attachments?: {
+    filename: string;
+    content: Buffer;
+  }[];
 };
