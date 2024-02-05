@@ -27,7 +27,6 @@ export const useRouterEventStore = create<RouteEventState>((set) => ({
   emit: (event) =>
     set((state) => {
       (state.eventHandlers[event] || []).forEach((handler) => {
-        console.log('Emitting event', event);
         handler();
       });
       return state;

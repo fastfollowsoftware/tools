@@ -8,7 +8,6 @@ export const emitActionStart = () => {
 };
 
 export const emitActionComplete = () => {
-  console.log('emitting action complete');
   const state = useRouterEventStore.getState();
 
   state.emit(RouterEvent.ActionComplete);
