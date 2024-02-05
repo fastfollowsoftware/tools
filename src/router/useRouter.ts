@@ -6,34 +6,35 @@ import {
   PrefetchOptions,
 } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import { useRouter as useNextRouter } from 'next/navigation';
-import { useRouteChangeContext } from 'nextjs13-router-events/dist/context/RouteChangeProvider';
+import { useRouterEventStore } from './routerEventStore';
+import { RouterEvent } from './RouterEvent';
 
 export function useRouter() {
   const router = useNextRouter();
-  const { onRouteChangeStart } = useRouteChangeContext();
+  const { emit } = useRouterEventStore();
 
   const proxy: AppRouterInstance = {
     back: function (): void {
-      onRouteChangeStart();
+      emit(RouterEvent.RouteChangeStart);
       router.back();
     },
     forward: function (): void {
-      onRouteChangeStart();
+      emit(RouterEvent.RouteChangeStart);
       router.forward();
     },
     refresh: function (): void {
-      onRouteChangeStart();
+      emit(RouterEvent.RouteChangeStart);
       router.refresh();
     },
     push: function (href: string, options?: NavigateOptions | undefined): void {
-      onRouteChangeStart();
+      emit(RouterEvent.RouteChangeStart);
       router.push(href, options);
     },
     replace: function (
       href: string,
       options?: NavigateOptions | undefined
     ): void {
-      onRouteChangeStart();
+      emit(RouterEvent.RouteChangeStart);
       router.replace(href, options);
     },
     prefetch: function (
