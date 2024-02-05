@@ -7,7 +7,6 @@ import {
   emitActionStart,
   emitActionComplete,
 } from './emit';
-import { RouteChange } from './RouteChange';
 import { RouterLink } from './RouterLink';
 import { useRouter } from './useRouter';
 import { RouteChangeComplete } from './RouteChangeComplete';
@@ -15,7 +14,6 @@ import { RouteChangeComplete } from './RouteChangeComplete';
 export {
   RouterLink,
   useRouter,
-  RouteChange,
   emitRouteChangeStart,
   emitRouteChangeComplete,
   emitActionStart,
