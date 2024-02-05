@@ -1,9 +1,6 @@
-import { ProgressBar } from './ProgressBar';
-import { RouterLink } from './RouterLink';
-import { RouteChange } from './RouteChange';
-import { useRouter } from './router';
+'use client';
 
-export { ProgressBar };
-export { RouterLink };
-export { RouteChange };
-export { useRouter };
+import { progressBarDone, progressBarStart } from './progressBarTrigger';
+import { ProgressBar } from './ProgressBar';
+
+export { ProgressBar, progressBarStart, progressBarDone };
