@@ -11,8 +11,8 @@ export type MailgunConfig = {
 export type SmtpConfig = {
   host: string;
   port: number;
-  username: string;
-  password: string;
+  username?: string;
+  password?: string;
   tls: boolean;
 };
 
