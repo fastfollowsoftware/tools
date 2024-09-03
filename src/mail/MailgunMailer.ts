@@ -1,7 +1,7 @@
 import { MailgunConfig } from './Config';
 import { MailSendOptions } from './MailSendOptions';
 import FormData from 'form-data';
-import Mailgun from 'mailgun.js';
+import Mailgun, { MailgunMessageData } from 'mailgun.js';
 import { MailerInterface } from './Mailer.interface';
 
 export class MailgunMailer implements MailerInterface {
@@ -19,7 +19,7 @@ export class MailgunMailer implements MailerInterface {
   }
 
   async send(options: MailSendOptions) {
-    return await this.mailgun.messages.create(this.config.domain, {
+    const mailgunOptions: MailgunMessageData = {
       from: options.from,
       to: options.to,
       subject: options.subject,
@@ -29,6 +29,12 @@ export class MailgunMailer implements MailerInterface {
         data: attachment.content,
         filename: attachment.filename,
       })),
-    });
+    };
+
+    if (options.replyTo) {
+      mailgunOptions['h:Reply-To'] = options.replyTo;
+    }
+
+    return await this.mailgun.messages.create(this.config.domain, options);
   }
 }
