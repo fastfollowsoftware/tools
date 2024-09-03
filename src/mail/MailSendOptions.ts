@@ -8,4 +8,5 @@ export type MailSendOptions = {
     filename: string;
     content: Buffer;
   }[];
+  replyTo?: string;
 };
