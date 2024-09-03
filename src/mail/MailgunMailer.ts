@@ -35,6 +35,9 @@ export class MailgunMailer implements MailerInterface {
       mailgunOptions['h:Reply-To'] = options.replyTo;
     }
 
-    return await this.mailgun.messages.create(this.config.domain, options);
+    return await this.mailgun.messages.create(
+      this.config.domain,
+      mailgunOptions
+    );
   }
 }
