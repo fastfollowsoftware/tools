@@ -1,6 +1,6 @@
 {
   "name": "@fastfollowsoftware/tools",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -38,7 +38,7 @@
   },
   "peerDependencies": {
     "@types/react": "^18",
-    "react": "^18",
-    "next": "^14.1"
+    "react": "^18 || ^19",
+    "next": "^14.1 || ^15"
   }
 }
