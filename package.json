@@ -1,13 +1,11 @@
 {
   "name": "@fastfollowsoftware/tools",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
-    "./mail": "./dist/mail/index.js",
-    "./progress-bar": "./dist/progress-bar/index.js",
-    "./router": "./dist/router/index.js"
+    "./mail": "./dist/mail/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -25,20 +23,16 @@
   "homepage": "https://github.com/fastfollowsoftware/tools#readme",
   "dependencies": {
     "mailgun.js": "^10.0.0",
-    "nextjs13-router-events": "^1.0.5",
     "nodemailer": "^6.9.8",
-    "nprogress": "^0.2.0",
-    "typescript": "^5.3.3",
-    "zustand": "^4.5.0"
+    "typescript": "^5.3.3"
   },
   "prepublishOnly": "tsc",
   "devDependencies": {
-    "@types/nodemailer": "^6.4.14",
-    "@types/nprogress": "^0.2.3"
+    "@types/nodemailer": "^6.4.14"
   },
   "peerDependencies": {
     "@types/react": "^18 || ^19",
-    "react": "^18 || ^19",
-    "next": "^14.1 || ^15"
+    "next": "^14.1 || ^15",
+    "react": "^18 || ^19"
   }
 }
