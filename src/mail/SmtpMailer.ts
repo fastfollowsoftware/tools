@@ -1,6 +1,6 @@
 import { SmtpConfig } from './Config';
 import { MailSendOptions } from './MailSendOptions';
-import nodemailer, { TransportOptions } from 'nodemailer';
+import nodemailer from 'nodemailer';
 import { MailerInterface } from './Mailer.interface';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
 
