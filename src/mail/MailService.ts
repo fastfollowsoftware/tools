@@ -2,6 +2,7 @@ import { MailerConfig } from './Config';
 import { MailSendOptions } from './MailSendOptions';
 import { MailgunMailer } from './MailgunMailer';
 import { SmtpMailer } from './SmtpMailer';
+import { SendGridMailer } from './SendGridMailer';
 
 export class MailService {
   private config: MailerConfig;
@@ -28,6 +29,11 @@ export class MailService {
         return new MailgunMailer({
           apiKey: this.config.apiKey,
           domain: this.config.domain,
+        });
+
+      case 'sendgrid':
+        return new SendGridMailer({
+          apiKey: this.config.apiKey,
         });
 
       default:
