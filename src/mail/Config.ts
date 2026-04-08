@@ -1,5 +1,5 @@
 export type BaseConfig = {
-  mailer: 'smtp' | 'mailgun';
+  mailer: 'smtp' | 'mailgun' | 'sendgrid';
   from: string;
 };
 
@@ -16,5 +16,13 @@ export type SmtpConfig = {
   tls: boolean;
 };
 
+export type SendGridConfig = {
+  apiKey: string;
+};
+
 export type MailerConfig = BaseConfig &
-  (({ mailer: 'mailgun' } & MailgunConfig) | ({ mailer: 'smtp' } & SmtpConfig));
+  (
+    | ({ mailer: 'mailgun' } & MailgunConfig)
+    | ({ mailer: 'smtp' } & SmtpConfig)
+    | ({ mailer: 'sendgrid' } & SendGridConfig)
+  );
